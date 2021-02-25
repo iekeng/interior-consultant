@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    font-size: 16px;
+}
+
+body {
+    /* width: 100vw; */
+    height: 100%;
+    background-color: #181719; 
+}
+
+input {
+    display: none;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    background-color: #181719;
+    margin: 0 auto;    
+}
+
+@media (max-width: 984px) { 
+    .container {
+        display: block;
+        overflow-y: hidden;
+    }
+
+    #menu-toggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -3px;
+        right: -5px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+        -webkit-touch-callout: none; 
+    }
+
+    #menu-toggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        left: 99px;
+        background: #cdcdcd;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.5s ease;
+    }
+
+    #menu-toggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+    
+    #menu-toggle input:checked ~ span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+    
+    #menu-toggle input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+         background-color: #cdcdcd;  
+     }
+    
+     #menu-toggle input:checked ~ span:nth-last-child(3)
+    {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    
+     #menu-toggle input:checked ~ span:nth-last-child(2) {
+         transform: rotate(-45deg) translate(0px, -2px);
+     }
+
+     #menu li {
+         padding: 10px 0;
+         font-size: 22px;
+     }
+    
+     #menu-toggle input:checked ~ ul {
+         transform: none;
+     }
+
+} 
+
+@media (max-width: 525px) { 
+    .container {
+        width: 90%;
+    }
+}
+
+nav {
+    display: flex;
+    width: 80%;
+    height: 2rem;
+    margin: 10px auto 8rem auto;
+}
+
+nav .logo {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border: 1px solid #ffffff;
+}
+
+nav .nav-links{
+    position: relative;
+    width: 40%;
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    padding-bottom: .2rem;
+}
+
+nav ul li a:hover{
+    border-bottom: 2px #ffffff solid;
+}
+
+.container .main{
+    flex: 2;
+}
+
+.container .main:nth-child(n + 1) {
+    margin-top: 2rem;
+}
+
+.container .main h1 {
+    font-size: 48px;
+    font-weight: 500;
+    font-family: 'Lora', serif;
+    margin-bottom: 2rem;
+}
+
+.container .main p {
+    font-size: 18px;
+    width: 70%;
+    line-height: 1.3;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.container .space {
+    flex: 1;
+}
+.container .aside{
+    flex: 3;
+}
+
+.aside .img-box-1 img {
+    width: 100%;
+    height: 100%;
+}
+
+.aside .img-box-1 {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.img-box-2 {
+    position: relative;
+    height: 50px;
+    width: 50px;
+}
+
+.creator-info {
+    width: 70%;
+    height: 185px;
+    position: absolute;
+    box-shadow: 0 0 6px 2px #080808;
+    background-color: #181719;
+    padding: 25px;
+    right: 27px;
+    z-index: 1;
+    top: 300px;
+    padding: 20px;
+}
+
+
+.creator-info .wrap {
+    display: flex;
+    width: 160px;
+    justify-content: space-between;
+}
+
+.creator-info .wrap .designer {
+    margin-top: .3rem;
+}
+
+.creator-info .wrap .designer h3 { 
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.creator-info .wrap .designer p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #828282;
+    margin-top: .5rem;
+}
+
+
+.creator-info p {
+    font-size: 24px;
+    font-weight: 700;   
+    Font-family: 'Lora', serif;
+}
+
+
+.img-box-2 img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.extra-info {
+    margin-top: 1rem;
+}
+
+
+.username {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+    color: #a9a9a9;
+}
